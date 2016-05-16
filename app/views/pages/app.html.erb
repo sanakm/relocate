@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Autocomplete - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    var availableTags = [
+      "Accounting",
+      "Actuary",
+      "Advertising",
+      "Budget Analyst",
+      "Claims Adjusters",
+      "Financial Analyst/Advisor",
+      "Financial Manager",
+      "Financial Sales",
+      "HR Manager",
+      "InsuranceAgent",
+      "Insurance Underwriter",
+      "Real Estate Broker/Agent",
+      "Comp/Info Research Scientist",
+      "Computer Network Architect",
+      "Computer-Control",
+      "Computer Programmer",
+      "Computer Science",
+      "Web Developer",
+      "Database Administrator",
+      "Mathematician",
+      "Graphic Designer",
+      "Statistican",
+      "Architect",
+      "Carpenter",
+      "Construction Worker",
+      "Construction Operator",
+      "Electrician",
+      "Roofer",
+      "Education Administrators",
+      "Teacher Assistant",
+      "Teacher",
+      "Journalist"
+
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
+</head>
+<body>
+<!-- <div class="snm">
+<h1>1. Select - 2. Navigate - 3. Move</h1>
+</div> -->
+<!--  <hr></hr> -->
+<!-- <div class="ui-widget">
+  <label for="tags">Profession: </label>
+  <input id="tags">
+</div> -->
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <div id="profession">
+      <h1>What's Your Profession? ⤵ </h1>
+      </div>
+      <div class="form-group">
+        <input type="text" id="tags" class="form-control" placeholder="Profession Name" autofocus>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- <div class"move">
+<button type="button" class="btn btn-custom">⌄</button>
+</div> -->
+<!-- <div id="listCities">
+  <button type="button" class="btn btn-custom">Click Me</button>
+</div> -->
+
+<div class="container">
+  <div class="col-md-12 column">
+    <div class="non-jumbotron">
+
+      <p>
+        <a class="btn btn-primary btn-large" id="listContacts" data-target="listFunction" href="#">➥ FIND MY NEXT MOVE</a>
+      </p>
+    </div>
+
+
+    <div id="controlArea">
+      <div id="createForm"  style="display:none" class="well">
+
+      <div id="displayRecord" style="display:none" class="well">
+        
+      </div>
+    </div>
+
+    <div id="results" style="display:none" class="well">
+    </div>
+
+  </div>
+</div>
+<div id="container">
+    <div id="inner">
+        <div id="home">
+            <button class="btn btn-primary weather-btn">City Details</button>
+        </div>
+        <div id="member-home">
+            <button>Close</button>
+        </div>
+    </div> 
+</div>
+
+</body>
+</html>

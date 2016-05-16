@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  country: MyString
+  general_info1: MyString
+  general_info2: MyString
+  happiness_rating: 
+  family_safety_rating: 
+  family_safety_info: MyString
+  bike_hobby_rating: 
+  bike_hobby_info: MyString
+  accountant_rating: 
+  accountant_shortage: MyString
+  accountant_avg_salary: 
+  graphic_designer_rating: 
+  graphic_designer_shortage: MyString
+  graphic_designer_avg_salary: 
+  journalist_rating: 
+  journalist_shortage: MyString
+  journalist_avg_salary: 
+
+two:
+  name: MyString
+  country: MyString
+  general_info1: MyString
+  general_info2: MyString
+  happiness_rating: 
+  family_safety_rating: 
+  family_safety_info: MyString
+  bike_hobby_rating: 
+  bike_hobby_info: MyString
+  accountant_rating: 
+  accountant_shortage: MyString
+  accountant_avg_salary: 
+  graphic_designer_rating: 
+  graphic_designer_shortage: MyString
+  graphic_designer_avg_salary: 
+  journalist_rating: 
+  journalist_shortage: MyString
+  journalist_avg_salary: 

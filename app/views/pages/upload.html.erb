@@ -1,0 +1,9 @@
+<h2>upload csv file:</h2>
+<%= form_tag upload_path, multipart: true do %>
+  <%= file_field_tag :file %><%= submit_tag "import" %>
+<% end %><br>
+
+<% @cities.each do |city| %>
+	<%= city.inspect %>
+	<br><br>
+<% end %>

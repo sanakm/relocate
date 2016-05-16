@@ -1,0 +1,60 @@
+ #background {
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     min-width: 50%;
+     min-height: 50%;
+     width: 100%;
+     height: 100%;
+     z-index: -100;
+     -webkit-transform: translateX(-50%) translateY(-50%);
+     transform: translateX(-50%) translateY(-50%);
+  /*   background: url(polina.jpg) no-repeat;*/
+     background-size: cover;
+     overflow: hidden;
+ }
+ .title h1 {
+   padding-right: 50px;
+   font-size: 120px;
+   margin-left: 13px;
+   margin-top: 180px;
+   font-family: oldtown;
+   color: grey;
+  
+ }
+ .description {
+   padding-right: 50px;
+   margin-left: 13px;
+   font-family: normal;
+   color: grey;
+   width: 150px;
+   font-size: 10px;
+/*   word-wrap: break-word;*/
+ }
+ 
+ .enter {
+   color: white;
+   text-align: center;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   background: grey;
+   margin-right: 13px;
+   float: right;
+   width: 95px;
+   height: 35px;
+   vertical-align: middle;
+   font-family: arial;
+   font-size: 11px;
+   border-radius: 5%;
+   padding-right: 0px;
+   line-height: 35px; 
+   text-decoration: none !important;
+   transition: all 0.5s ease-in-out;
+ }
+ .enter:hover {
+  color: white ;
+  padding-left: 10px;
+  transition: all 0.5s ease-in-out;
+
+ }
