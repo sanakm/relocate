@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  get 'cities/index'
+
   # get 'relocate/index'
 
  get '/index' => 'pages#index'
  get '/app' => 'pages#app'
  get '/upload' => 'pages#upload'
  post '/upload' => 'pages#import'
+
+ resources :cities
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
