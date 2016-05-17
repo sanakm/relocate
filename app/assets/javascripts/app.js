@@ -56,6 +56,7 @@ $(function() {
     }
   }
 
+
   $('#submit_profession').on('click', function(e) {
     e.preventDefault();
     var searchTerm = $("#tags").val();

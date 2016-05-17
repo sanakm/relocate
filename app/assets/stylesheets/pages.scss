@@ -2,50 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-    background-color: #ffdc73 !important;
-}
-.ui-widget {
+.form-group {
     margin-left: 13px;
     margin-top: 13px;
+    overflow-y:scroll;
 }
+.overflow { height: 200px; }
+
+
 
 label {
     font-size: 50px;
-}
-
-.go {
-  color: white;
-  text-align: center;
-  position: absolute;
-  top: 45px;
-  right: 10px;
-  background: grey;
-  margin-right: 600px;
-  float: right;
-  width: 40px;
-  height: 35px;
-  vertical-align: middle;
-  font-family: arial;
-  font-size: 11px;
-  border-radius: 5%;
-  padding-right: 0px;
-  line-height: 35px; 
-  text-decoration: none !important;
-  transition: all 0.5s ease-in-out;
-}
-.go:hover {
- color: white ;
- padding-left: 10px;
- transition: all 0.5s ease-in-out;
 
 }
-.snm {
-    text-align: center;
-    font-family: 'Times New Roman';
+
+#tags {
+    font-size: 15px;
+    height: 30px;
+    width: 400px;
+
 }
-.ui-autocomplete {
-    font-size: 70px;
+.container2 {
+
+position: absolute;
+float: right;
+width: 95px;
+height: 35px;
+
 }
 
 .btn-custom {
@@ -80,19 +63,22 @@ fieldset[disabled] .btn-custom.active {
 #profession h1 {
     font-size: 60px;
     font-family: 'Times New Roman';
-    color: grey;
+    color: #ffdd00;
+    background-color:black;
+    margin:0;
+
 }
 #results {
   background-color: #ffdc73;
   border-color: #ffdc73;
 }
 #container {
-    position:absolute;
+    position: absolute;
     bottom:0;
     right:0;
     width:500px;
     height:50%;
-    overflow:hidden
+    overflow:hidden;
 }
 #inner {
     position: relative;
