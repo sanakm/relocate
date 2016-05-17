@@ -86,6 +86,12 @@ fieldset[disabled] .btn-custom.active {
   background-color: #ffdc73;
   border-color: #ffdc73;
 }
+
+#column {
+  display:flex
+}
+
+
 #container {
     position:absolute;
     bottom:0;
@@ -94,6 +100,26 @@ fieldset[disabled] .btn-custom.active {
     height:50%;
     overflow:hidden
 }
+
+#float_right {
+  float:right;
+}
+
+.container {
+    -moz-border-radius: 10px/10px;
+    -webkit-border-radius: 10px 10px;
+    border:solid 1px ;
+}
+
+.city_details {
+  -moz-border-radius: 10px/10px;
+    -webkit-border-radius: 10px 10px;
+    border:solid 1px ;
+    display:flex;
+    height:100px;
+
+}
+
 #inner {
     position: relative;
     width: 800px; 
@@ -111,4 +137,13 @@ fieldset[disabled] .btn-custom.active {
     width: 500px;
     height: 600px;
     background-color: grey;
+}
+
+
+.loadinggif 
+{
+   background:
+     url('http://www.hsi.com.hk/HSI-Net/pages/images/en/share/ajax-loader.gif')
+     no-repeat
+     right center;
 }
