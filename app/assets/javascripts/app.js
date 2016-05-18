@@ -121,8 +121,8 @@ $(function() {
         });
         var new_results = $(".city_details");
         new_results.html("");
-        $(".city_details").append("<p>City Name:" + selected_city.name + "<br><br></p>");
-        $(".city_details").append("<p>City Country:" + selected_city.country + "</p><br><br>");
+        $(".city_details").append("<p>" + selected_city.name + "<br><br></p>");
+        $(".city_details").append("<p>," + selected_city.country + "</p><br><br>");
         $(".city_details").append("<p>Country General Info:" + selected_city.general_info1 + "</p>");
 
     });
