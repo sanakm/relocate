@@ -135,16 +135,51 @@ $(function() {
         }
     });
 
-//     $('#results').on('click', '.dev_city', function(e) {
-//         e.preventDefault();
-//         var searchTerm = $("#tags").val();
-//         var results = $("#results");
-//         var current_city_id = $(this).data("city-id");
-//         cities.forEach(function(city) {
-//             if (city.id == current_city_id) {
-//                 selected_city = city;
-//             }
-//         });
-//         var new_new_results = $(".city_details2");
-//         new_new_results.html("");
+    $('#city_details').on('click', '#webdev_rating_info', function(e) {
+        e.preventDefault();
+        // var searchTerm = $("#tags").val();
+        // var results = $("#results");
+        // var current_city_id = $(this).data("city-id");
+        // cities.forEach(function(city) {
+        //     if (city.id == current_city_id) {
+        //         selected_city = city;
+        //     }
+        // });
+        var new_new_results = $("#map-currency");
+        new_new_results.html("");
+        $("#map-currency").append("<div><p>" + selected_city.name + " WebDev Rating is " + selected_city.webdev_rating + "</p></div>");
+    });
+
+    $('#city_details').on('click', '#webdev_country_info', function(e) {
+        e.preventDefault();
+        // var searchTerm = $("#tags").val();
+        // var results = $("#results");
+        // var current_city_id = $(this).data("city-id");
+        // cities.forEach(function(city) {
+        //     if (city.id == current_city_id) {
+        //         selected_city = city;
+        //     }
+        // });
+        var new_new_results = $("#map-currency");
+        new_new_results.html("");
+        $("#map-currency").append("<div><p>" + selected_city.name + " info is " + selected_city.general_info1 + "</p></div>");
+        $("#map-currency").append("<div><p>" + selected_city.name + " geo positioning is " + selected_city.gps_coordinates + "</p></div>");
+        $("#map-currency").append("<div><p>" + selected_city.name + " PUT GOOGLEMAPS API HERE</p></div>");
+
+    });
+
+    $('#city_details').on('click', '#webdev_currency_info', function(e) {
+        e.preventDefault();
+        // var searchTerm = $("#tags").val();
+        // var results = $("#results");
+        // var current_city_id = $(this).data("city-id");
+        // cities.forEach(function(city) {
+        //     if (city.id == current_city_id) {
+        //         selected_city = city;
+        //     }
+        // });
+        var new_new_results = $("#map-currency");
+        new_new_results.html("");
+        $("#map-currency").append("<div><p>" + selected_city.country + " Currency Info</p></div>");
+    });
 });
