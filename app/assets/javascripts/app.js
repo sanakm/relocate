@@ -122,14 +122,14 @@ $(function() {
                 selected_city = city;
             }
         });
-        var new_results = $(".city_details");
+        var new_results = $("#city_details");
         new_results.html("");
         if (searchTerm === "Web Developer") {
-            $(".city_details").append("<div class='middle_column'><p>City Name: " + selected_city.name + "</p></div>");
-            $(".city_details").append("<div class='middle_column1'><p>City Country: " + selected_city.country + "</p></div>");
-            $(".city_details").append("<div class='middle_column1' id='webdev_rating_info'><p>Web Developer Rating: " + selected_city.webdev_rating + "</p></div>");
-            $(".city_details").append("<div class='middle_column1' id='webdev_country_info'><p>Country Info</p></div>");
-            $(".city_details").append("<div class='middle_column1' id='webdev_currency_info'><p>Currency Info</p></div>");
+            $("#city_details").append("<div class='middle_column'><p>City Name: " + selected_city.name + "</p></div>");
+            $("#city_details").append("<div class='middle_column1'><p>City Country: " + selected_city.country + "</p></div>");
+            $("#city_details").append("<div class='middle_column1' id='webdev_rating_info'><p>Web Developer Rating: " + selected_city.webdev_rating + "</p></div>");
+            $("#city_details").append("<div class='middle_column1' id='webdev_country_info'><p>Country Info</p></div>");
+            $("#city_details").append("<div class='middle_column1' id='webdev_currency_info'><p>Currency Info</p></div>");
             // $(".city_details").append("<div class='middle_column1'><p>Web Developer Average Salary: " + selected_city.webdev_avg_salary + "</p></div>");
             // $(".city_details").append("<div class='middle_column1'><p>Family Safety Rating: " + selected_city.family_safety_rating + "</p></div>");
 
