@@ -132,7 +132,19 @@ $(function() {
             $("#city_details").append("<div class='middle_column1' id='webdev_currency_info'><p>Currency Info</p></div>");
             // $(".city_details").append("<div class='middle_column1'><p>Web Developer Average Salary: " + selected_city.webdev_avg_salary + "</p></div>");
             // $(".city_details").append("<div class='middle_column1'><p>Family Safety Rating: " + selected_city.family_safety_rating + "</p></div>");
-
         }
     });
+
+    $('#results').on('click', '.dev_city', function(e) {
+        e.preventDefault();
+        var searchTerm = $("#tags").val();
+        var results = $("#results");
+        var current_city_id = $(this).data("city-id");
+        cities.forEach(function(city) {
+            if (city.id == current_city_id) {
+                selected_city = city;
+            }
+        });
+        var new_new_results = $(".city_details2");
+        new_new_results.html("");
 });
