@@ -28,7 +28,11 @@ position: absolute;
 float: right;
 width: 95px;
 height: 35px;
+}
 
+
+.middle_column1 {
+  clear:both
 }
 
 .btn-custom {
@@ -102,12 +106,10 @@ fieldset[disabled] .btn-custom.active {
   -moz-border-radius: 10px/10px;
     -webkit-border-radius: 10px 10px;
     border:solid 1px ;
-    display:flex;
     width: 40%;
     height: 300px;
     margin-right: 360px;
     float: right;
-
 }
 
 #inner {
@@ -129,6 +131,9 @@ fieldset[disabled] .btn-custom.active {
     background-color: grey;
 }
 
+#database_sentence {
+  width:150px;
+}
 
 .loadinggif 
 {

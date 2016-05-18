@@ -106,13 +106,16 @@ $(function() {
             });
         
         } else {
-            $("#results").append("<p>" + "Acessing database..." + "</p>").addClass("loadinggif");
+            $("#results").append("<div id='database_sentence'><p>" + "Acessing database..." + "</p>").addClass("loadinggif");
         }
     });
 
   });
 
     $('#results').on('click', '.dev_city', function(e) {
+        e.preventDefault();
+        var searchTerm = $("#tags").val();
+        var results = $("#results");
         var current_city_id = $(this).data("city-id");
         cities.forEach(function(city) {
             if (city.id == current_city_id) {
@@ -121,9 +124,15 @@ $(function() {
         });
         var new_results = $(".city_details");
         new_results.html("");
-        $(".city_details").append("<p>" + selected_city.name + "<br><br></p>");
-        $(".city_details").append("<p>," + selected_city.country + "</p><br><br>");
-        $(".city_details").append("<p>Country General Info:" + selected_city.general_info1 + "</p>");
+        if (searchTerm === "Web Developer") {
+            $(".city_details").append("<div class='middle_column'><p>City Name: " + selected_city.name + "</p></div>");
+            $(".city_details").append("<div class='middle_column1'><p>City Country: " + selected_city.country + "</p></div>");
+            $(".city_details").append("<div class='middle_column1' id='webdev_rating_info'><p>Web Developer Rating: " + selected_city.webdev_rating + "</p></div>");
+            $(".city_details").append("<div class='middle_column1' id='webdev_country_info'><p>Country Info</p></div>");
+            $(".city_details").append("<div class='middle_column1' id='webdev_currency_info'><p>Currency Info</p></div>");
+            // $(".city_details").append("<div class='middle_column1'><p>Web Developer Average Salary: " + selected_city.webdev_avg_salary + "</p></div>");
+            // $(".city_details").append("<div class='middle_column1'><p>Family Safety Rating: " + selected_city.family_safety_rating + "</p></div>");
 
+        }
     });
 });
