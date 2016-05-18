@@ -135,16 +135,16 @@ $(function() {
         }
     });
 
-    $('#results').on('click', '.dev_city', function(e) {
-        e.preventDefault();
-        var searchTerm = $("#tags").val();
-        var results = $("#results");
-        var current_city_id = $(this).data("city-id");
-        cities.forEach(function(city) {
-            if (city.id == current_city_id) {
-                selected_city = city;
-            }
-        });
-        var new_new_results = $(".city_details2");
-        new_new_results.html("");
+//     $('#results').on('click', '.dev_city', function(e) {
+//         e.preventDefault();
+//         var searchTerm = $("#tags").val();
+//         var results = $("#results");
+//         var current_city_id = $(this).data("city-id");
+//         cities.forEach(function(city) {
+//             if (city.id == current_city_id) {
+//                 selected_city = city;
+//             }
+//         });
+//         var new_new_results = $(".city_details2");
+//         new_new_results.html("");
 });
