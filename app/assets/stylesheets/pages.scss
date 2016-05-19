@@ -162,8 +162,13 @@ width: 150px;
 
 .dev_city {
   font-size:300%;
+  text-decoration: none;
 }
 
 #big_number {
   font-size:1000%;
+}
+
+a.dev_city {
+  text-decoration:none;
 }

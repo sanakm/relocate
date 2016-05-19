@@ -84,7 +84,7 @@ $(function() {
             });
             var top_five = sorted.slice(0,5);
             top_five.forEach(function(city) {
-              $("#results").append("<p class='dev_city' data-city-id='" + city.id + "'>" + city.name + "</p><p>(Rating:  " + city.webdev_rating + ")</p>");
+              $("#results").append("<a class='dev_city' data-city-id='" + city.id + "'>" + city.name + "</a><p>(Rating:  " + city.webdev_rating + ")</p>");
             });
         
         } else if(searchTerm === "Accounting") {
@@ -94,7 +94,7 @@ $(function() {
                 return a1 < b1 ? 1: -1;
             });
             sorted.forEach(function(city) {
-              $("#results").append("<p id='accountant_city'>" + city.name + "     Accountant Rating:  " + city.accountant_rating + "</p>");
+              $("#results").append("<a id='accountant_city'>" + city.name + "     Accountant Rating:  " + city.accountant_rating + "</p>");
             });
 
         } else if(searchTerm === "Graphic Designer") {
@@ -111,7 +111,7 @@ $(function() {
             var sorted = data.sort(function(a,b){
                 var a1=a.journalist_rating, b1=b.journalist_rating;
                 if(a1==b1) return 0;
-                return a1 < b1 ? 1: -1;
+                return a1 < b1 ? 1: -1;s
             });
             sorted.forEach(function(city) {
               $("#results").append("<p id='journalist_city'>" + city.name + "     Journalist  " + city.journalist_rating + "</p>");
@@ -136,11 +136,11 @@ $(function() {
         var new_results = $("#city_details");
         new_results.html("");
         if (searchTerm === "Web Developer") {
-            $("#city_details").append("<div class='middle_column1' id='webdev_rating_info'><p>Web Developer Rating:</p><p id='big_number'> " + selected_city.webdev_rating + "</p></div>");
+            $("#city_details").append("<div class='middle_column1' id='webdev_rating_info'><a> Web Developer Rating:</a><p id='big_number'> " + selected_city.webdev_rating + "</p></div><p>Out of 10</p>");
             $("#city_details").append("<div class='middle_column'><p>City Name: " + selected_city.name + "</p></div>");
             $("#city_details").append("<div class='middle_column1'><p>City Country: " + selected_city.country + "</p></div>");
-            $("#city_details").append("<div class='middle_column1' id='webdev_country_info'><p>Country Info</p></div>");
-            $("#city_details").append("<div class='middle_column1' id='webdev_currency_info'><p></p>Currency Info</div>");
+            $("#city_details").append("<div><a class='middle_column1' id='webdev_country_info'>Country Info</a></div><div></div>");
+            $("#city_details").append("<a class='middle_column1' id='webdev_currency_info'>Currency Info</a>");
         }
     });
 
@@ -149,6 +149,7 @@ $(function() {
         var new_new_results = $("#map-currency");
         new_new_results.html("");
         $("#map-currency").append("<div><p>" + selected_city.name + " WebDev Rating is " + selected_city.webdev_rating + "</p></div>");
+        $("#map-currency").append("<div><p>" + selected_city.name + " Average Income for Web Developer with 0 years experience holding a Non-Degree Certificate Program</p><p id='big_number'>" + selected_city.webdev_avg_salary + "</p></div>");
     });
 
 
