@@ -64,6 +64,10 @@ fieldset[disabled] .btn-custom.active {
   border-color: #8c9eff;
 }
 
+
+html, body { height: 100%; margin: 0; padding: 0; }
+  #map { height: 100%; }
+
 #profession h1 {
     font-size: 60px;
     font-family: 'Times New Roman';
@@ -173,3 +177,5 @@ width: 150px;
   float: right;
   
 }
+
+

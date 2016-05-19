@@ -1,5 +1,10 @@
 $(function() {
 
+
+  var map;
+    initMap = function () {
+  };
+
   var availableTags = [
     "Accounting",
     "Actuary",
@@ -81,9 +86,7 @@ $(function() {
                 console.log("city");
               $("#results").append("<p class='dev_city' data-city-id='" + city.id + "'>" + city.name + " dev_rating " + city.webdev_rating + "</p>");
             
-                            
             });
-
         
         } else if(searchTerm === "Accounting") {
             var sorted = data.sort(function(a,b){
@@ -106,10 +109,9 @@ $(function() {
             });
         
         } else {
-            $("#results").append("<div id='database_sentence'><p>" + "Acessing database..." + "</p>").addClass("loadinggif");
+            $("#results").append("<div id='database_sentence'><p>Acessing database...</p></div>");
         }
-    });
-
+     });
   });
 
     $('#results').on('click', '.dev_city', function(e) {
@@ -129,55 +131,34 @@ $(function() {
             $("#city_details").append("<div class='middle_column1'><p>City Country: " + selected_city.country + "</p></div>");
             $("#city_details").append("<div class='middle_column1' id='webdev_rating_info'><p>Web Developer Rating: " + selected_city.webdev_rating + "</p></div>");
             $("#city_details").append("<div class='middle_column1' id='webdev_country_info'><p>Country Info</p></div>");
-            $("#city_details").append("<div class='middle_column1' id='webdev_currency_info'><p>Currency Info</p></div>");
-            // $(".city_details").append("<div class='middle_column1'><p>Web Developer Average Salary: " + selected_city.webdev_avg_salary + "</p></div>");
-            // $(".city_details").append("<div class='middle_column1'><p>Family Safety Rating: " + selected_city.family_safety_rating + "</p></div>");
+            $("#city_details").append("<div class='middle_column1' id='webdev_currency_info'><p></p>Currency Info</div>");
         }
     });
 
     $('#city_details').on('click', '#webdev_rating_info', function(e) {
         e.preventDefault();
-        // var searchTerm = $("#tags").val();
-        // var results = $("#results");
-        // var current_city_id = $(this).data("city-id");
-        // cities.forEach(function(city) {
-        //     if (city.id == current_city_id) {
-        //         selected_city = city;
-        //     }
-        // });
         var new_new_results = $("#map-currency");
         new_new_results.html("");
         $("#map-currency").append("<div><p>" + selected_city.name + " WebDev Rating is " + selected_city.webdev_rating + "</p></div>");
     });
 
+
     $('#city_details').on('click', '#webdev_country_info', function(e) {
         e.preventDefault();
-        // var searchTerm = $("#tags").val();
-        // var results = $("#results");
-        // var current_city_id = $(this).data("city-id");
-        // cities.forEach(function(city) {
-        //     if (city.id == current_city_id) {
-        //         selected_city = city;
-        //     }
-        // });
         var new_new_results = $("#map-currency");
         new_new_results.html("");
         $("#map-currency").append("<div><p>" + selected_city.name + " info is " + selected_city.general_info1 + "</p></div>");
         $("#map-currency").append("<div><p>" + selected_city.name + " geo positioning is " + selected_city.gps_coordinates + "</p></div>");
-        $("#map-currency").append("<div><p>" + selected_city.name + " PUT GOOGLEMAPS API HERE</p></div>");
+        $("#map-currency").append("<div id='map'></div>");
 
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: +selected_city.lat, lng: +selected_city.lng},
+            zoom: 5
+        });
     });
 
     $('#city_details').on('click', '#webdev_currency_info', function(e) {
         e.preventDefault();
-        // var searchTerm = $("#tags").val();
-        // var results = $("#results");
-        // var current_city_id = $(this).data("city-id");
-        // cities.forEach(function(city) {
-        //     if (city.id == current_city_id) {
-        //         selected_city = city;
-        //     }
-        // });
         var new_new_results = $("#map-currency");
         new_new_results.html("");
         $("#map-currency").append("<div><p>" + selected_city.country + " Currency Info</p></div>");
