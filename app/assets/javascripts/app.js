@@ -45,6 +45,10 @@ $(function() {
     source: availableTags
   });
 
+  setTimeout(function(){
+    $('#results').delay();
+  }, 5000);
+
   function toggleDivs() {
     var $inner = $("#inner");
 
@@ -60,6 +64,7 @@ $(function() {
         });
     }
   }
+
 
   var cities = []; // global
 
