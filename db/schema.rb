@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519075610) do
+ActiveRecord::Schema.define(version: 20160519205138) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20160519075610) do
     t.integer  "web_dev_shortage"
     t.decimal  "lat",                         precision: 15, scale: 13
     t.decimal  "lng",                         precision: 15, scale: 13
+    t.string   "code"
   end
 
 end
