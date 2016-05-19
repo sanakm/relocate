@@ -1,6 +1,6 @@
 $(function() {
 
-
+  var selected_city;
   var map;
     initMap = function () {
   };
@@ -50,6 +50,9 @@ $(function() {
 
   $('#submit_profession').on('click', function(e) {
     e.preventDefault();
+    $("#city_details").html("");
+    $("#map-currency").html("");
+
     var searchTerm = $("#tags").val();
     var results = $("#results");
 
@@ -109,6 +112,7 @@ $(function() {
   });
 
     $('#results').on('click', '.dev_city', function(e) {
+        $("#map-currency").html("");
         e.preventDefault();
         var searchTerm = $("#tags").val();
         var results = $("#results");
@@ -156,21 +160,23 @@ $(function() {
         e.preventDefault();
         var new_new_results = $("#map-currency");
         new_new_results.html("");
-        $("#map-currency").append("<div><p>" + selected_city.country + " Currency Info</p></div>");
+        // $("#map-currency").append("<div><p>" + selected_city.country + " Currency Info</p></div>");
+        // currency api
+        endpoint = 'live'
+        access_key = '2079b00422e43c763090dfd1c6588aa1';
+
+        // get the most recent exchange rates via the "live" endpoint:
+        $.ajax({
+            url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + access_key + '&currencies=' + selected_city.code,   
+            dataType: 'jsonp',
+            success:    function(data){
+            $("#map-currency").append("<div>" + String(data.quotes["USD"+selected_city.code]) + "</div>");
+            debugger
+        }
+        }); 
     });
 
-    // currency api
-    endpoint = 'live'
-    access_key = '2079b00422e43c763090dfd1c6588aa1';
-
-    // get the most recent exchange rates via the "live" endpoint:
-    $.ajax({
-        url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + access_key + '&currencies=' + selected_city.code,   
-        dataType: 'jsonp',
-        success:    function(data){
-        $("#map-currency").html(data.quotes.USDAUD.toString());
-    }
-    }); 
+    
 });
 
 

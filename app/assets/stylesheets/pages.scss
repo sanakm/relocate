@@ -170,5 +170,6 @@ width: 150px;
 }
 
 a.dev_city {
+  &:hover {text-decoration:none;}
   text-decoration:none;
 }
