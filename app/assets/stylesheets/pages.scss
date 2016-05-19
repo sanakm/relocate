@@ -1,15 +1,20 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.app-page {
+  margin: 0;
+    padding: 0;
+}
+
+#title_bar {
+  width: 100%;
+}
 
 .form-group {
     margin-left: 13px;
     margin-top: 13px;
     overflow-y:scroll;
 }
-.overflow { height: 200px; }
-
-
 
 label {
     font-size: 50px;
@@ -20,16 +25,8 @@ label {
     font-size: 15px;
     height: 30px;
     width: 400px;
-
+    
 }
-.container2 {
-
-position: absolute;
-float: right;
-width: 95px;
-height: 35px;
-}
-
 
 .middle_column1 {
   clear:both
@@ -65,16 +62,13 @@ fieldset[disabled] .btn-custom.active {
 }
 
 #profession h1 {
-    font-size: 60px;
+    font-size: 50px;
     font-family: 'Times New Roman';
-    color: #ffdd00;
-    background-color:black;
     margin:0;
 
 }
 #results {
-  background-color: #ffdc73;
-  border-color: #ffdc73;
+
   width: 30%;
   margin-top:0;
 
@@ -84,29 +78,18 @@ fieldset[disabled] .btn-custom.active {
   display:flex
 }
 
-#container {
-    position: absolute;
-    bottom:0;
-    right:0;
-    width:500px;
-    height:50%;
-    overflow:hidden;
-}
+.overlay{
+    opacity:0.8;
+    margin:0;
+    width: 100%;
+    left: 0px;
+    padding:0;
 
-#float_right {
-  float:right;
-}
-
-.container {
-    -moz-border-radius: 10px/10px;
-    -webkit-border-radius: 10px 10px;
-    border:solid 1px ;
 }
 
 .city_details {
   -moz-border-radius: 10px/10px;
     -webkit-border-radius: 10px 10px;
-    border:solid 1px ;
     width: 35%;
     height: 300px;
     margin-right: 390px;
@@ -116,7 +99,6 @@ fieldset[disabled] .btn-custom.active {
 .map-currency {
 -moz-border-radius: 10px/10px;
   -webkit-border-radius: 10px 10px;
-  border:solid 1px ;
   width: 30%;
   height: 300px;
   margin-right: 0px;
@@ -131,45 +113,8 @@ fieldset[disabled] .btn-custom.active {
 
 .left {
   display: table-cell;
-  border:solid 1px ;
+
   width: 30%;
   height: 300px;
 }
 
-#inner {
-    position: relative;
-    width: 800px; 
-}
-#home {
-    position:absolute;
-    width: 500px;
-    height: 600px;
-    background-color: #ffdc73;
-}
-
-#member-home {
-    position:absolute;
-    left:500px;
-    width: 500px;
-    height: 600px;
-    background-color: grey;
-}
-
-#database_sentence {
-  width:150px;
-}
-
-.loadinggif 
-{
-   background:
-     url('http://www.hsi.com.hk/HSI-Net/pages/images/en/share/ajax-loader.gif')
-     no-repeat
-     right center;
-}
-
-#links {
-width: 150px;
-  height: 30px;
-  float: right;
-  
-}
