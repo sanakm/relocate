@@ -45,27 +45,6 @@ $(function() {
     source: availableTags
   });
 
-  setTimeout(function(){
-    $('#results').delay();
-  }, 5000);
-
-  function toggleDivs() {
-    var $inner = $("#inner");
-
-    // See which <divs> should be animated in/out.
-    if ($inner.position().left == 0) {
-        $inner.animate({
-            left: "-500px"
-        });
-    }
-    else {
-        $inner.animate({
-            left: "0px"
-        });
-    }
-  }
-
-
   var cities = []; // global
 
   $('#submit_profession').on('click', function(e) {
@@ -168,4 +147,25 @@ $(function() {
         new_new_results.html("");
         $("#map-currency").append("<div><p>" + selected_city.country + " Currency Info</p></div>");
     });
+
+    // currency api
+    endpoint = 'live'
+    access_key = '2079b00422e43c763090dfd1c6588aa1';
+
+    // get the most recent exchange rates via the "live" endpoint:
+    $.ajax({
+        url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + access_key + '&currencies=' + selected_city.code,   
+        dataType: 'jsonp',
+        success:    function(data){
+        $("#map-currency").html(data.quotes.USDAUD.toString());
+    }
+    }); 
 });
+
+
+// sorted.forEach(function(city) {
+//     console.log("city");
+//   $("#results").append("<p class='dev_city' data-city-id='" + city.id + "'>" + city.name + " dev_rating " + city.webdev_rating + "</p>");
+
+
+
