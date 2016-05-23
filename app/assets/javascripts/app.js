@@ -137,10 +137,10 @@ $(function() {
         e.preventDefault();
         var new_new_results = $("#map-currency");
         new_new_results.html("");
-        $("#map-currency").append("<div><p>" + selected_city.name + " WebDev Rating is " + selected_city.webdev_rating + "</p></div>");
-        $("#map-currency").append("<div><p>" + selected_city.name + " Average Income for Web Developer with 0 years experience holding a Non-Degree Certificate Program</p><p id='big_number'>" + selected_city.webdev_avg_salary + "</p></div>");
+        $("#map-currency").append("<div><p>" + selected_city.name + " Average Income for Web Developer with 0 years experience holding a Non-Degree Certificate Program</p><p id='big_number'>$" + selected_city.webdev_avg_salary + "</p></div>");
+        $("#map-currency").append("<div><p>" + selected_city.country + " has a happines rating of " + selected_city.happiness_rating + " and " + selected_city.name + " has a family safety rating of " + selected_city.family_safety_rating + ".  " + selected_city.name + " has a cost of living rating of " + selected_city.cost_of_living + ", which, together with the city's shortage rating for your profession (" + selected_city.web_dev_shortage + "), and the city's average income of " + selected_city.webdev_average_salary + ", affects the city's " + selected_city.salary_vs_col + " and generates the city's overall rating of </p><p id='big_number'>" + selected_city.webdev_rating + "</p><p> for your profession.</p></div>"
+);
     });
-
 
     $('#city_details').on('click', '#webdev_country_info', function(e) {
         e.preventDefault();
@@ -171,7 +171,6 @@ $(function() {
             dataType: 'jsonp',
             success:    function(data){
             $("#map-currency").append("<div>" + String(data.quotes["USD"+selected_city.code]) + "</div>");
-            debugger
         }
         }); 
     });
