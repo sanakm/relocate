@@ -5,6 +5,12 @@ $(function() {
     initMap = function () {
   };
 
+  //   $app_page = $('.app-page')
+
+  //   $('.enter').on('click', function(e) {
+  //     $app_page.addClass('load');
+  // });
+
   var availableTags = [
     "Accounting",
     "Actuary",
@@ -45,26 +51,47 @@ $(function() {
     source: availableTags
   });
 
-
   var cities = []; // global
 
+  $jumbotron = $('.jumbotron')
+
+
   $('#submit_profession').on('click', function(e) {
+
+
+    // $('#results').show(5000, function () {
+            
+                     
+                     // setTimeout(function () {
+                     //     $('#results').html();
+                     // }, 2500);
+          
+         // });
+
+
+    $jumbotron.addClass('horizTranslate');
+   
     e.preventDefault();
     $("#city_details").html("");
     $("#map-currency").html("");
+
+    
 
     var searchTerm = $("#tags").val();
     var results = $("#results");
 
     // clear existing results
     results.html("");
-
+    // setTimeout(function () {
     $.ajax({
       url: "/cities",
       type: "GET"
     }).done(function(data) {
         cities = data; // set cities as global
         if (searchTerm === "Web Developer") {
+            
+            $("#results").append("<p>Top 5 Cities</p>");
+
             var sorted = data.sort(function(a,b){
                 var a1=a.webdev_rating, b1=b.webdev_rating;
                 if(a1==b1) return 0;
@@ -72,20 +99,22 @@ $(function() {
             });
             var top_five = sorted.slice(0,5);
             top_five.forEach(function(city) {
-              $("#results").append("<a class='dev_city' data-city-id='" + city.id + "'>" + city.name + "</a><p>(Rating:  " + city.webdev_rating + ")</p>");
+              $("#results").append("<a class='dev_city' data-city-id='" + city.id + "'>" + city.name + "</a><p>(Rating:  " + city.webdev_rating + ")</p>").show('slide', {direction: 'right'}, 600);
             });
         
         } else if(searchTerm === "Accounting") {
+            $("#results").append("<p>Top 5 Cities</p>")
             var sorted = data.sort(function(a,b){
                 var a1=a.accountant_rating, b1=b.accountant_rating;
                 if(a1==b1) return 0;
                 return a1 < b1 ? 1: -1;
             });
             sorted.forEach(function(city) {
-              $("#results").append("<a id='accountant_city'>" + city.name + "     Accountant Rating:  " + city.accountant_rating + "</p>");
+              $("#results").append("<a id='accountant_city'>" + city.name + "     Accountant Rating:  " + city.accountant_rating + "</p>").show('slide', {direction: 'right'}, 600);
             });
 
         } else if(searchTerm === "Graphic Designer") {
+            $("#results").append("<p>Top 5 Cities</p>")
             var sorted = data.sort(function(a,b){
                 var a1=a.graphic_designer_rating, b1=b.graphic_designer_rating;
                 if(a1==b1) return 0;
@@ -96,6 +125,7 @@ $(function() {
             });
         
         } else if(searchTerm === "Journalist") {
+            $("#results").append("<p>Top 5 Cities</p>")
             var sorted = data.sort(function(a,b){
                 var a1=a.journalist_rating, b1=b.journalist_rating;
                 if(a1==b1) return 0;
@@ -108,6 +138,7 @@ $(function() {
         } else {
             $("#results").append("<div id='database_sentence'><p>Acessing database...</p></div>");
         }
+ 
      });
   });
 
@@ -125,11 +156,11 @@ $(function() {
         var new_results = $("#city_details");
         new_results.html("");
         if (searchTerm === "Web Developer") {
-            $("#city_details").append("<div class='middle_column1' id='webdev_rating_info'><a> Web Developer Rating:</a><p id='big_number'> " + selected_city.webdev_rating + "</p></div><p>Out of 10</p>");
-            $("#city_details").append("<div class='middle_column'><p>City Name: " + selected_city.name + "</p></div>");
-            $("#city_details").append("<div class='middle_column1'><p>City Country: " + selected_city.country + "</p></div>");
-            $("#city_details").append("<div><a class='middle_column1' id='webdev_country_info'>Country Info</a></div><div></div>");
-            $("#city_details").append("<a class='middle_column1' id='webdev_currency_info'>Currency Info</a>");
+            $("#city_details").append("<div class='middle_column1' id='webdev_rating_info'><p>City Details</p><a> Web Developer Rating:</a><p id='big_number'> " + selected_city.webdev_rating + "</p></div><p>Out of 10</p>").show('slide', {direction: 'right'}, 600);
+            $("#city_details").append("<div class='middle_column'><p>City Name: " + selected_city.name + "</p></div>").show('slide', {direction: 'right'}, 600);
+            $("#city_details").append("<div class='middle_column1'><p>City Country: " + selected_city.country + "</p></div>").show('slide', {direction: 'right'}, 600);
+            $("#city_details").append("<div><a class='middle_column1' id='webdev_country_info'>Country Info</a></div><div></div>").show('slide', {direction: 'right'}, 600);
+            $("#city_details").append("<a class='middle_column1' id='webdev_currency_info'>Currency Info</a>").show('slide', {direction: 'right'}, 600);
         }
     });
 
@@ -137,9 +168,9 @@ $(function() {
         e.preventDefault();
         var new_new_results = $("#map-currency");
         new_new_results.html("");
-        $("#map-currency").append("<div><p>" + selected_city.name + " Average Income for Web Developer with 0 years experience holding a Non-Degree Certificate Program</p><p id='big_number'>$" + selected_city.webdev_avg_salary + "</p></div>");
-        $("#map-currency").append("<div><p>" + selected_city.country + " has a happines rating of " + selected_city.happiness_rating + " and " + selected_city.name + " has a family safety rating of " + selected_city.family_safety_rating + ".  " + selected_city.name + " has a cost of living rating of " + selected_city.cost_of_living + ", which, together with the city's shortage rating for your profession (" + selected_city.web_dev_shortage + "), and the city's average income of " + selected_city.webdev_average_salary + ", affects the city's " + selected_city.salary_vs_col + " and generates the city's overall rating of </p><p id='big_number'>" + selected_city.webdev_rating + "</p><p> for your profession.</p></div>"
-);
+        $("#map-currency").append("<div><p>" + selected_city.name + " Average Income for Web Developer with 0 years experience holding a Non-Degree Certificate Program</p><p id='big_number'>$" + selected_city.webdev_avg_salary + "</p></div>").show('slide', {direction: 'right'}, 600);
+        $("#map-currency").append("<div><p>" + selected_city.country + " has a happines rating of " + selected_city.happiness_rating + " and " + selected_city.name + " has a family safety rating of " + selected_city.family_safety_rating + ".  " + selected_city.name + " has a cost of living rating of " + selected_city.cost_of_living + ", which, together with the city's shortage rating for your profession (" + selected_city.web_dev_shortage + "), and the city's average income of " + selected_city.webdev_average_salary + ", affects the city's " + selected_city.salary_vs_col + " and generates the city's overall rating of </p><p id='big_number'>" + selected_city.webdev_rating + "</p><p> for your profession.</p></div>");
+
     });
 
     $('#city_details').on('click', '#webdev_country_info', function(e) {
@@ -174,14 +205,6 @@ $(function() {
         }
         }); 
     });
-
-    
 });
-
-
-// sorted.forEach(function(city) {
-//     console.log("city");
-//   $("#results").append("<p class='dev_city' data-city-id='" + city.id + "'>" + city.name + " dev_rating " + city.webdev_rating + "</p>");
-
 
 
