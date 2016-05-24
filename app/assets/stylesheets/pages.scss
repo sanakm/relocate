@@ -4,6 +4,10 @@
 
 .app-page{
   background-color: #383838;
+
+  height: 100%;
+  width: 100%;
+
 //     opacity: 1;
 //     // font-size: 21px;
 //     // margin-top: 25px;
@@ -114,10 +118,10 @@ html, body { height: 100%; margin: 0; padding: 0; }
 #profession h1 {
     font-size: 20px;
     text-align: center;
-    font-family: 'Bree Serif';
+    font-family: 'Play';
     margin:0;
-    margin-right: 13px;
-    color: grey
+    margin-left: 13px;
+    color: white;
 }
 
 #results {
@@ -132,6 +136,11 @@ html, body { height: 100%; margin: 0; padding: 0; }
 }
 
 #city_details {
+
+  padding-left: 400px;
+  position: absolute; /*newly added*/
+
+     top: 5px;/*newly added*/
     // width: 35%;
     // margin-right: 390px;
     // padding-left: 500px;
@@ -158,8 +167,11 @@ a {
   // display: inline-block;
   padding-left: 100px;
   width: 35%;
-  
+
+  clear: both;
+
 }
+
 .wrapper
 {
   display: table;
@@ -222,10 +234,15 @@ width: 150px;
 }
 
 #big_number {
-  font-size:600%;
+  font-size:500%;
+
 }
 
 a.dev_city {
   &:hover {text-decoration:none;}
   text-decoration:none;
+}
+
+p {
+  color: white;
 }
