@@ -211,7 +211,7 @@ $(function() {
         $("#map-currency").append("<div><p>" + selected_city.name + " geo positioning is " + selected_city.gps_coordinates + "</p></div>").delay(600).show(0);
 
         $("#map-currency").append("<div><p>" + selected_city.name + " geo positioning is " + selected_city.gps_coordinates + "</p></div>").delay(600).show(0);
-        $("#map-currency").append("<div id='map'></div>").delay(500).show(0);
+        $("#map-currency").append("<div id='map'></div>").show(0);
 
         map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: +selected_city.lat, lng: +selected_city.lng},
