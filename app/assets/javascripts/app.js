@@ -129,6 +129,7 @@ $(function() {
             var top_six = sorted.slice(0,5);
 
             top_six.forEach(function(city) {
+
             $(".clear").append("<a class='dev_city' data-city-id='" + city.id + "'>" + city.name + "</a><p></p>").fadeIn('slow');
             });
         
@@ -162,7 +163,6 @@ $(function() {
             $("#city_details").append("<div class='middle_column1'><p>" + selected_city.country + "</p> </div>").show('slide', {direction: 'right'}, 600);
             $("#city_details").append("<div><p>" + selected_city.name + " Average Income for Web Developer with 0 years experience holding a Non-Degree Certificate Program is " + selected_city.webdev_avg_salary + "</p></div>");
             $("#city_details").append("<div><p>" + selected_city.name + " info is " + selected_city.general_info1 + "</p></div>").delay(600).show(0);
-
             $("#city_details").append("<div><a class='middle_column1' id='webdev_country_info'>Country Info</a></div><div></div>").show('slide', {direction: 'right'}, 600);
             $("#city_details").append("<a class='middle_column1' id='webdev_currency_info'>Currency Info</a>").show('slide', {direction: 'right'}, 600);
         }
