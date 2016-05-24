@@ -2,6 +2,7 @@ $(function() {
 
   var selected_city;
   var map;
+  var marker;
     initMap = function () {
   };
 
@@ -208,6 +209,7 @@ $(function() {
         var new_new_results = $("#map-currency");
         new_new_results.html("");
         $("#map-currency").append("<div><p>" + selected_city.name + " geo positioning is " + selected_city.gps_coordinates + "</p></div>").delay(600).show(0);
+
         $("#map-currency").append("<div><p>" + selected_city.name + " geo positioning is " + selected_city.gps_coordinates + "</p></div>").delay(600).show(0);
         $("#map-currency").append("<div id='map'></div>").delay(500).show(0);
 
@@ -215,6 +217,12 @@ $(function() {
             center: {lat: +selected_city.lat, lng: +selected_city.lng},
             zoom: 7
         });
+
+        // marker = new google.maps.Marker({
+        //   map: map,
+        //   position: {lat: +selected_city.lat, lng: +selected_city.lng},
+        //   title: selected_city.name
+        // });
     });
 
     $('#city_details').on('click', '#webdev_currency_info', function(e) {
