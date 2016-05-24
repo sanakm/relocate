@@ -1,18 +1,61 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.app-page {
-  margin: 0;
-    padding: 0;
+
+.app-page{
+  background-color: #383838;
+  height: 100%;
+  width: 100%;
+
+//     opacity: 1;
+//     // font-size: 21px;
+//     // margin-top: 25px;
+//     // text-align: center;
+
+//     -webkit-transition: opacity 1s ease-in;
+//     transition: opacity 2s ease-in;
+ }
+
+// .app-page.load {
+//     opacity: 1 !important;
+//     margin: 0;
+//     padding: 0;
+
+// }
+
+// .app-page {
+//   margin: 0;
+//     padding: 0;
+// }
+
+.jumbotron {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #303030 !important;
+  text-align: center;
+  z-index: 100;
+ 
+}
+
+.jumbotron.horizTranslate {
+  opacity: 1 !important;
+  position: absolute;
+  transition: width 0.5s ease-in-out;
+  width: 30%;
+  
 }
 
 #title_bar {
   width: 100%;
+  text-align: center;
 }
 
 .form-group {
     margin-left: 13px;
     margin-top: 13px;
+    height: 43px;
+    width: 200px;
     overflow-y:scroll;
 }
 
@@ -24,8 +67,13 @@ label {
 #tags {
     font-size: 15px;
     height: 30px;
-    width: 400px;
+    width: 200px;
+    font-family: 'Quicksand';
     
+}
+
+.ui-autocomplete.ui-widget {
+  font-family: 'Quicksand';
 }
 
 .middle_column1 {
@@ -66,60 +114,74 @@ html, body { height: 100%; margin: 0; padding: 0; }
   #map { height: 100%; }
 
 #profession h1 {
-    font-size: 50px;
-    font-family: 'Times New Roman';
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Play';
     margin:0;
-
+    margin-left: 13px;
+    color: white;
 }
+
 #results {
-
+  padding-top: 160px;
+  padding-left: 400px;
   width: 30%;
-  margin-top:0;
-
+  z-index: 2;
 }
 
 #column {
   display:flex
 }
 
-.overlay{
-    opacity:0.8;
-    margin:0;
-    width: 100%;
-    left: 0px;
-    padding:0;
+#city_details {
+  padding-left: 400px;
+  position: absolute; /*newly added*/
 
+     top: 5px;/*newly added*/
+    // width: 35%;
+    // margin-right: 390px;
+    // padding-left: 500px;
+    // z-index: 3;
+
+    // padding-right: 0px;
 }
 
-.city_details {
-  -moz-border-radius: 10px/10px;
-    -webkit-border-radius: 10px 10px;
-    width: 35%;
-    height: 300px;
-    margin-right: 390px;
-    float: right;
+a {
+  &:hover {text-decoration:none;}
+  text-decoration:none;
+    color: #337ab7;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {text-decoration:none;}
+    text-decoration:none;
+  }
+
+#map-currency {
+  // -webkit-border-radius: 10px 10px;
+  // // width: 30%;
+  // // height: 300px;
+  // margin-right: 0px;
+  // display: inline-block;
+  padding-left: 100px;
+  width: 35%;
+  clear: both;
 }
 
-.map-currency {
--moz-border-radius: 10px/10px;
-  -webkit-border-radius: 10px 10px;
-  width: 30%;
-  height: 300px;
-  margin-right: 0px;
-  display: inline-block;
-  
-}
 .wrapper
 {
   display: table;
   width: 100%;
+  height: 100%;
 }
 
 .left {
-  display: table-cell;
+    display: table-cell;
 
-  width: 30%;
-  height: 300px;
+    background-color: #383838;
+    // width: 30%;
+    height: 100%;
+    padding-left: 90px;
+
 }
 
 #inner {
@@ -161,15 +223,21 @@ width: 150px;
 }
 
 .dev_city {
-  font-size:300%;
+  font-size:200%;
   text-decoration: none;
+  cursor: pointer;
+  color: white;
 }
 
 #big_number {
-  font-size:1000%;
+  font-size:500%;
 }
 
 a.dev_city {
   &:hover {text-decoration:none;}
   text-decoration:none;
+}
+
+p {
+  color: white;
 }
