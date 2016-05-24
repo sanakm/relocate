@@ -2,11 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$gutter-width: 45px;
 .app-page{
   background-color: #383838;
 
-  height: 100%;
-  width: 100%;
+  // height: 100%;
+  // width: 100%;
 
 //     opacity: 1;
 //     // font-size: 21px;
@@ -30,9 +31,10 @@
 // }
 
 .jumbotron {
+  padding-top: $gutter-width;
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   background-color: #303030 !important;
   text-align: center;
   z-index: 100;
@@ -113,7 +115,7 @@ html, body { height: 100%; margin: 0; padding: 0; }
   #map { height: 100%; }
 
 #profession h1 {
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
     font-family: 'Play';
     margin:0;
@@ -135,10 +137,9 @@ html, body { height: 100%; margin: 0; padding: 0; }
 #city_details {
 
   padding-left: 400px;
+  padding-top: $gutter-width;
+  font-family: 'Comfortaa';
 
-
-     top: 5px;/*newly added*/
-    // width: 35%;
     // margin-right: 390px;
     // padding-left: 500px;
     // z-index: 3;
@@ -227,10 +228,11 @@ width: 150px;
 }
 
 .dev_city {
-  font-size:200%;
+  font-size:300%;
   text-decoration: none;
   cursor: pointer;
   color: white;
+  font-family: 'Titillium Web'
 }
 
 #big_number {
@@ -239,7 +241,8 @@ width: 150px;
 }
 
 a.dev_city {
-  &:hover {text-decoration:none;}
+  &:hover {text-decoration:none;
+  color: #ffdd00;}
   text-decoration:none;
 }
 
