@@ -78,7 +78,12 @@ label {
 }
 
 .middle_column1 {
+  &:hover {text-decoration:none;
+  color: #ffdd00;
+}
+  color: white;
   clear:both
+
 }
 
 .btn-custom {
@@ -124,10 +129,10 @@ html, body { height: 100%; margin: 0; padding: 0; }
 }
 
 #results {
-  padding-top: 160px;
-  // padding-left: 400px;
-  // width: 30%;
-  z-index: 2;
+  // padding-top: 160px;
+  // // padding-left: 400px;
+  // // width: 30%;
+  // z-index: 2;
 }
 
 #column {
@@ -138,7 +143,7 @@ html, body { height: 100%; margin: 0; padding: 0; }
 
   padding-left: 400px;
   padding-top: $gutter-width;
-  font-family: 'Comfortaa';
+  font-family: 'Cantarell';
 
     // margin-right: 390px;
     // padding-left: 500px;
