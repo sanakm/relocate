@@ -77,8 +77,8 @@ $(function() {
         cities = data; // set cities as global
         if (searchTerm === "Web Developer") {
             
-
-            $(".jumbotron").append("<p>Top 5 Cities</p>").fadeIn('slow');
+            $(".clear").html("");
+            $(".clear").append("<p>Top 5 Cities</p>").fadeIn('slow');
 
             var sorted = data.sort(function(a,b){
                 var a1=a.webdev_rating, b1=b.webdev_rating;
@@ -88,7 +88,7 @@ $(function() {
             var top_five = sorted.slice(0,5);
             top_five.forEach(function(city) {
 
-              $(".jumbotron").append("<a class='dev_city' data-city-id='" + city.id + "'>" + city.name + "</a><p></p>").fadeIn('slow');
+              $(".clear").append("<a class='dev_city' data-city-id='" + city.id + "'>" + city.name + "</a><p></p>").fadeIn('slow');
 
             });
         
@@ -117,8 +117,8 @@ $(function() {
             });
         
         } else if(searchTerm === "Journalist") {
-
-            $(".jumbotron").append("<p>Top 5 Cities</p>")
+            $(".clear").html("");
+            $(".clear").append("<p>Top 5 Cities</p>")
 
             var sorted = data.sort(function(a,b){
                 var a1=a.journalist_rating, b1=b.journalist_rating;
@@ -129,11 +129,12 @@ $(function() {
             var top_six = sorted.slice(0,5);
 
             top_six.forEach(function(city) {
-              $(".jumbotron").append("<p id='journalist_city'>" + city.name + "     Journalist  " + city.journalist_rating + "</p>");
+            $(".clear").append("<a class='dev_city' data-city-id='" + city.id + "'>" + city.name + "</a><p></p>").fadeIn('slow');
             });
         
         } else {
-            $(".jumbotron").append("<div id='database_sentence'><p>Acessing database...</p></div>").show('slide', {direction: 'right'}, 600);
+            $(".clear").html("");
+            $(".clear").append("<div id='database_sentence'><p>Acessing database...</p></div>").show('slide', {direction: 'right'}, 600);
         }
  
      });
