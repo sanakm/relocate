@@ -112,8 +112,8 @@ fieldset[disabled] .btn-custom.active {
 }
 
 
-html, body { height: 100%; margin: 0; padding: 0; }
-  #map { height: 100%; }
+// html, body { height: 100%; margin: 0; padding: 0; }
+//   #map { height: 100%; }
 
 #profession h1 {
     font-size: 20px;
@@ -126,8 +126,8 @@ html, body { height: 100%; margin: 0; padding: 0; }
 
 #results {
   padding-top: 160px;
-  padding-left: 400px;
-  width: 30%;
+  // padding-left: 400px;
+  // width: 30%;
   z-index: 2;
 }
 
@@ -138,7 +138,7 @@ html, body { height: 100%; margin: 0; padding: 0; }
 #city_details {
 
   padding-left: 400px;
-  position: absolute; /*newly added*/
+
 
      top: 5px;/*newly added*/
     // width: 35%;
@@ -164,11 +164,14 @@ a {
   // // width: 30%;
   // // height: 300px;
   // margin-right: 0px;
-  // display: inline-block;
-  padding-left: 100px;
-  width: 35%;
+  display: inline-block;
+  padding-left: 400px;
+  // width: 35%;
+  margin-top: 400px;
+  border:1px solid white;
+  margin-left: 30px;
 
-  clear: both;
+
 
 }
 
@@ -183,8 +186,8 @@ a {
 
     background-color: #383838;
     // width: 30%;
-    height: 100%;
-    padding-left: 90px;
+    // height: 100%;
+    // padding-left: 90px;
 
 }
 
