@@ -165,10 +165,12 @@ a {
   display: block;
   // padding-left: 400px;
   // width: 35%;
-  // margin-top: 400px;
-  border:1px solid white;
+  margin-top: 30px;
+  // border:1px solid white;
   // margin-left: 30px;
   overflow: auto;
+  width:800px;
+  float:right;
 
 
 
@@ -209,7 +211,9 @@ a {
 }
 
 #database_sentence {
+  padding-top:40px;
   width:150px;
+  margin:auto;
 }
 
 .loadinggif 
@@ -255,4 +259,9 @@ p {
   margin-top:0px;
   width:500px;
   height:380px;
+}
+
+#columnRight {
+  float:right;
+  width:1200px;
 }

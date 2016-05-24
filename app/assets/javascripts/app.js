@@ -44,7 +44,8 @@ $(function() {
     "Education Administrators",
     "Teacher Assistant",
     "Teacher",
-    "Journalist"
+    "Journalist",
+    "Geographic Information System"
 
   ];
 
@@ -136,7 +137,7 @@ $(function() {
         
         } else {
             $(".clear").html("");
-            $(".clear").append("<div id='database_sentence'><p>Acessing database...</p><img src='ajaxloader.gif'></div>").show('slide', {direction: 'right'}, 600);
+            $(".clear").append("<div id='database_sentence'><p>Accessing database...</p><img src='ajaxloader.gif'></div>").show('slide', {direction: 'right'}, 600);
         }
  
      });
@@ -229,8 +230,8 @@ $(function() {
         new_new_results.html("");
         // $("#map-currency").append("<div><p>" + selected_city.country + " Currency Info</p></div>");
         // currency api
-        endpoint = 'live'
-        access_key = '2079b00422e43c763090dfd1c6588aa1';
+        var endpoint = 'live'
+        var access_key = '2079b00422e43c763090dfd1c6588aa1';
 
         // get the most recent exchange rates via the "live" endpoint:
         $.ajax({
