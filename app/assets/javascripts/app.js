@@ -44,7 +44,8 @@ $(function() {
     "Education Administrators",
     "Teacher Assistant",
     "Teacher",
-    "Journalist"
+    "Journalist",
+    "Geographic Information System"
 
   ];
 
@@ -136,7 +137,7 @@ $(function() {
         
         } else {
             $(".clear").html("");
-            $(".clear").append("<div id='database_sentence'><p>Acessing database...</p><img src='ajaxloader.gif'></div>").show('slide', {direction: 'right'}, 600);
+            $(".clear").append("<div id='database_sentence'><p>Accessing database...</p><img src='ajaxloader.gif'></div>").show('slide', {direction: 'right'}, 600);
         }
  
      });
