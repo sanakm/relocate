@@ -18,7 +18,7 @@ To Do:
 3) Add automated explanation for profession rating of city.  
     ie. "<div><p>" + selected_city.country + " has a happines rating of " + selected_city.happiness_rating + " and " + selected_city.name + " has a family safety rating of " + selected_city.family_safety_rating + ".  " + selected_city.name + " has a cost of living rating of " + selected_city.cost_of_living + ", which, together with the city's shortage rating for your profession (" + web_dev_shortage + "), and the city's average income of " + selected_city.webdev_average_salary + ", generates the city's rating of </p><p id='big_number'>" + webdev_rating + ".</p></div>"
 
-3) Add Journalist info
+3) Add Journalist info and add vancouver/silcone valley info
 
 -12.8
 -61
@@ -52,3 +52,29 @@ salary_percent_diff
 13
 2
 8.4
+11.7
+41
+
+
+find the country/city's happiness rating
+
+find the city's safety rating
+
+percentage difference in average income, comparing Toronto to other city.
+http://www.percentagecalculator.net/
+
+find cost of living for other city, and compare it with Toronto
+http://www.numbeo.com/cost-of-living/city_result.jsp?country=Switzerland&city=Zurich
+http://www.numbeo.com/cost-of-living/compare_cities.jsp?country1=Canada&country2=Canada&city1=Vancouver&city2=Toronto&tracking=getDispatchComparison
+take the Consumer Prices Including Rent percentage difference, and put it above
+
+subtract the cost of living percentage difference from the average income percentage difference
+to get the salary vs col number - the higher the number, the better the city.
+
+to find shortage number, use job posting frequencies on major classifieds sections,
+and other miscellaneous info findings
+
+vancouver
+seatle
+portland
+san fran (cy
