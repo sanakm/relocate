@@ -120,7 +120,7 @@ $(function() {
         
         } else if(searchTerm === "Journalist") {
             $(".clear").html("");
-            $(".clear").append("<p>Top 5 Cities</p>")
+            // $(".clear").append("<p>Top 5 Cities</p>")
 
             var sorted = data.sort(function(a,b){
                 var a1=a.journalist_rating, b1=b.journalist_rating;
@@ -163,8 +163,23 @@ $(function() {
             $("#city_details").append("<div class='middle_column1' id='webdev_rating_info'><p> Web Developer Rating: " + selected_city.webdev_rating + "/10"+ "</p>").delay(600).show(0);
             $("#city_details").append("<div><p>" + selected_city.name + " Average Income for Web Developer with 0 years experience holding a Non-Degree Certificate Program is " + selected_city.webdev_avg_salary + "</p></div>");
             $("#city_details").append("<div><p>" + selected_city.general_info1 + "</p></div>").delay(600).show(0);
+            $("#city_details").append("<div id='api-response'></div>").delay(600).show(0);
+            
+            // currency API
+            var endpoint = 'live';
+            var access_key = '2079b00422e43c763090dfd1c6588aa1';
+            // get the most recent exchange rates via the "live" endpoint:
+            $.ajax({
+                url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + access_key + '&currencies=' + selected_city.code,   
+                dataType: 'jsonp',
+                success:    function(data){
+                    $("#api-response").append("<div><p>Exchange rate: " + String(data.quotes["USD"+selected_city.code]) + " " + selected_city.code + "</div>");
+                } 
+            });   
+            
+            // $("#city_details").append("<div><p>Exchange rate: " + selected_city.code + "</p></div>").delay(600).show(0);
             $("#city_details").append("<div><a class='middle_column1' id='webdev_country_info'>Country Info</a></div><div></div>").show('slide', {direction: 'right'}, 600);
-            $("#city_details").append("<a class='middle_column1' id='webdev_currency_info'>Currency Info</a><br></br>").show('slide', {direction: 'right'}, 600);
+            // $("#city_details").append("<a class='middle_column1' id='webdev_currency_info'>Currency Info</a><br></br>").show('slide', {direction: 'right'}, 600);
         }
 
         if (searchTerm === "Journalist") {
@@ -172,8 +187,21 @@ $(function() {
             $("#city_details").append("<div class='middle_column1' id='webdev_rating_info'><p> Journalist Rating: " + selected_city.journalist_rating + "/10"+ "</p>").delay(600).show(0);
             $("#city_details").append("<div><p>" + selected_city.name + " Average Income for Journalist with 0 years experience is " + selected_city.journalist_avg_salary + "</p></div>");
             $("#city_details").append("<div><p>" + selected_city.general_info1 + "</p></div>").delay(600).show(0);
+            
+            // currency API
+            var endpoint = 'live';
+            var access_key = '2079b00422e43c763090dfd1c6588aa1';
+            // get the most recent exchange rates via the "live" endpoint:
+            $.ajax({
+                url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + access_key + '&currencies=' + selected_city.code,   
+                dataType: 'jsonp',
+                success:    function(data){
+                    $("#city_details").append("<div><p>Exchange rate: " + String(data.quotes["USD"+selected_city.code]) + " " + selected_city.code + "</div>");
+                } 
+            });  
+
             $("#city_details").append("<div><a class='middle_column1' id='webdev_country_info'>Country Info</a></div><div></div>").show('slide', {direction: 'right'}, 600);
-            $("#city_details").append("<a class='middle_column1' id='webdev_currency_info'>Currency Info</a><br></br>").show('slide', {direction: 'right'}, 600);
+            // $("#city_details").append("<a class='middle_column1' id='webdev_currency_info'>Currency Info</a><br></br>").show('slide', {direction: 'right'}, 600);
    }
     });
 
@@ -222,26 +250,26 @@ $(function() {
         });
     });
 
-    $('#city_details').on('click', '#webdev_currency_info', function(e) {
-        e.preventDefault();
-        var new_new_results = $("#map-currency");
-        new_new_results.html("");
-        // $("#map-currency").append("<div><p>" + selected_city.country + " Currency Info</p></div>");
-        // currency api
-        var endpoint = 'live'
-        var access_key = '2079b00422e43c763090dfd1c6588aa1';
+    // $('.jumbotron').on('click', '.dev_city', function(e) {
+    //     e.preventDefault();
+    //     var new_new_results = $("#map-currency");
+    //     new_new_results.html("");
+    //     // $("#map-currency").append("<div><p>" + selected_city.country + " Currency Info</p></div>");
+    //     // currency api
+    //     var endpoint = 'live'
+    //     var access_key = '2079b00422e43c763090dfd1c6588aa1';
 
-        // get the most recent exchange rates via the "live" endpoint:
-        $.ajax({
-            url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + access_key + '&currencies=' + selected_city.code,   
-            dataType: 'jsonp',
-            success:    function(data){
+    //     // get the most recent exchange rates via the "live" endpoint:
+    //     $.ajax({
+    //         url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + access_key + '&currencies=' + selected_city.code,   
+    //         dataType: 'jsonp',
+    //         success:    function(data){
 
-            $("#map-currency").append("<div>" + String(data.quotes["USD"+selected_city.code]) + "</div>");
+    //         $("#city_details").append("<div>" + String(data.quotes["USD"+selected_city.code]) + "</div>");
 
-        }
-        }); 
-    });
+    //     }
+    //     }); 
+    // });
 });
 
 
