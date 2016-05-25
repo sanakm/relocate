@@ -153,6 +153,10 @@ html, body { height: 100%; margin: 0; padding: 0; }
     // padding-right: 0px;
 }
 
+#city_details > .left{
+  width: 100%;
+}
+
 a {
   &:hover {text-decoration:none;}
   text-decoration:none;
@@ -259,9 +263,14 @@ a.dev_city {
   text-decoration:none;
 }
 
-p {
-  color: white;
-}
+  p {
+      margin: 0 0 10px;
+      font-weight: 200 !important;
+      font-family: 'Tahoma';
+      font-size: 1em;
+      color: #ccc;
+  }
+
 
 #map {
   padding-left: 400px;
