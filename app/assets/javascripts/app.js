@@ -168,13 +168,13 @@ $(function() {
         }
 
         if (searchTerm === "Journalist") {
-            $("#city_details").append("<div class='middle_column1' id='journalist_rating_info'><p>City Details</p><a> Web Developer Rating:</a><p id='big_number'> " + selected_city.journalist_rating + "</p></div><p>Out of 10</p>").show('slide', {direction: 'right'}, 600);
-            $("#city_details").append("<div class='middle_column'><p>City Name: " + selected_city.name + "</p></div>").show('slide', {direction: 'right'}, 600);
-            $("#city_details").append("<div class='middle_column1'><p>City Country: " + selected_city.country + "</p></div>").show('slide', {direction: 'right'}, 600);
-            $("#city_details").append("<div><p>" + selected_city.name + " info is " + selected_city.general_info1 + "</p></div>").delay(600).show(0);
+            $("#city_details").append("<div class='middle_column'><p>" + '<p style="font-size:25px; border-bottom: 1px solid #ffdd00;">' + selected_city.name + ", " + selected_city.country +'</p>' + "</p></div>").show('slide', {direction: 'right'}, 600);
+            $("#city_details").append("<div class='middle_column1' id='webdev_rating_info'><p> Journalist Rating: " + selected_city.journalist_rating + "/10"+ "</p>").delay(600).show(0);
+            $("#city_details").append("<div><p>" + selected_city.name + " Average Income for Journalist with 0 years experience is " + selected_city.journalist_avg_salary + "</p></div>");
+            $("#city_details").append("<div><p>" + selected_city.general_info1 + "</p></div>").delay(600).show(0);
             $("#city_details").append("<div><a class='middle_column1' id='webdev_country_info'>Country Info</a></div><div></div>").show('slide', {direction: 'right'}, 600);
-            $("#city_details").append("<a class='middle_column1' id='webdev_currency_info'>Currency Info</a>").show('slide', {direction: 'right'}, 600);
-        }
+            $("#city_details").append("<a class='middle_column1' id='webdev_currency_info'>Currency Info</a><br></br>").show('slide', {direction: 'right'}, 600);
+   }
     });
 
 
