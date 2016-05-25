@@ -184,7 +184,7 @@ a {
   width:940px;
   float:right;
   background-color: #404040;
-  padding-bottom: 36px;
+  padding-bottom: 15px;
   padding-top: 17px;
   margin-bottom: 0px;
   height: 100%;
@@ -242,18 +242,32 @@ a {
      right center;
 }
 
-#webdev_country_info {
-    &:hover {text-decoration:none;
-    color: #ffdd00;}
+#webdev_country_info, .link a {
+  &:link, &:visited, &:active {
+    color: #ccc;
     text-decoration:none;
   }
-  .link1 {
-        text-decoration:none;
-        color: #ccc;
-       &:hover {text-decoration:none;
-       color: #ffdd00;}
-       
-   }
+  &:hover {
+    text-decoration:none;
+    color: #ffdd00;
+  }
+  &:active {
+    color: #ccc;
+  }
+  text-decoration:none;
+}
+// .link {
+//   a:hover {text-decoration:none;
+//      color: #ffdd00;}
+//   a:visited {
+//     text-decoration:none;
+//     color: #ffdd00;
+//   }
+//      text-decoration:none;
+//      color: #ccc;
+//   }
+// }
+
 
 #links {
 width: 150px;
