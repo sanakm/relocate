@@ -247,6 +247,13 @@ a {
     color: #ffdd00;}
     text-decoration:none;
   }
+  .link1 {
+        text-decoration:none;
+        color: #ccc;
+       &:hover {text-decoration:none;
+       color: #ffdd00;}
+       
+   }
 
 #links {
 width: 150px;
