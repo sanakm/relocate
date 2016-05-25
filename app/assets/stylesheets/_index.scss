@@ -8,17 +8,15 @@
  }
  .quote h1 {
    background-color: #ffdd00;
-   padding-left: 50px;
    width: 850px;
    height: 295px;
-   padding-right: 50px;
-   font-size: 80px;
+   font-size: 70px;
    margin-top: 75px;
-   font-family: candara;
-   color: black;
-   border-radius: 5px;
+   // border-radius: 5px;
    text-align: left;
-
+   font-family: 'Arial';
+   color: #333;
+   padding: 0.5em;
   
  }
  .description {
