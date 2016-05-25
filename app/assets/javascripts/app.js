@@ -144,7 +144,7 @@ $(function() {
   });
 
     $('.jumbotron').on('click', '.dev_city', function(e) {
-
+        $('#map-currency').hide();
         $jumbotron.addClass('horizTranslate');
         $("#map-currency").html("");
         e.preventDefault();
@@ -279,5 +279,3 @@ $(function() {
     //     }); 
     // });
 });
-
-

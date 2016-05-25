@@ -1,31 +1,24 @@
-most of my work for the site was backend and database entry.   there was no relevent API, 
-so we had to accumulate the data and base our city ratings on our own findings.  to do so
-we did the following: 
+most of my work for the site was backend and database entry.   
 
-1) found the country/city happiness rating, based on The World Happiness Report 
-published by the United Nations Sustainable Development Solutions Network. 
+we had to accumulate the majority of our data and base our city ratings on our own 
+findings.
 
-2) found the individual city's safety rating
-  - safest place from our selected cities is Zurich, Switzerland, followed by 
-    Copenhagen, Denmark, and Vienna, Austria
-  - most dangerous place is Brasilia, Brasil.
-  - Toronto is the top ranking city outside of the ultra-safe city rankings, ie. the
-    best of the average cities.
+so first we found each city's happiness rating, based on The World Happiness Report 
+published by the United Nations 
 
-3) found the average incomes for profession in our selected cities, given experience 
-   levels and education
-  - default for the site, for the purpose of this presentation is currently set to 
-    0 years of experience holding a holding a Non-Degree Certificate Program.
-  - given more time, we would implement the option to specify qualifications.
-  - we then compared the incomes to the Toronto average, and generated a percentage 
-    difference to use in our algorithm.
+next we gathered each city's safety rating ...
+  - out of our selected cities, the safest place is Zurich, Switzerland 
+  - most dangerous place is Brasilia in Brasil.
+  - Toronto is the safest of the averagely safe cities
+
+then we found the average incomes for each profession in our selected cities, given 
+  experience and levels and education
   
-4) found cost of living for the different cities.
-  - again, compared the cost of living with Toronto, and generated a percentage difference
-    between the two.
+then we found the cost of living for the different cities and computed them against the 
+city's average income for each profession, to generate a income to cost of living rating 
     
-5) determined the need for the profession, calling it the 'profession shortage' ranking.
-  - hardest part of the research, as we had to go off of classified postings and other
-    random info from miscellaneous sites.
-
-6)  added all the numbers together to determine each city's rank for each profession.
+then we determined the need for each profession in each city, which was based on 
+    classified postings and other random info from miscellaneous sites
+  
+and lastely we computed each cities overall rating based on these individual ratings 
+and numbers.
