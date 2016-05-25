@@ -202,7 +202,7 @@ $(function() {
 
             $("#city_details").append("<div><a class='middle_column1' id='webdev_country_info'>Country Info</a></div><div></div>").show('slide', {direction: 'right'}, 600);
             // $("#city_details").append("<a class='middle_column1' id='webdev_currency_info'>Currency Info</a><br></br>").show('slide', {direction: 'right'}, 600);
-   }
+        }
     });
 
 
