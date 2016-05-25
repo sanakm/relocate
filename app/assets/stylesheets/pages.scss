@@ -41,6 +41,8 @@ $gutter-width: 45px;
 }
 
 .jumbotron.horizTranslate {
+  height: 100%;
+  width: 100%;
   opacity: 1 !important;
   position: absolute;
   transition: width 0.5s ease-in-out;
@@ -80,9 +82,9 @@ label {
 
 .middle_column1 {
   &:hover {text-decoration:none;
-  color: #ffdd00;
+
 }
-  color: white;
+  color: #ccc;
   clear:both
 
 }
@@ -143,7 +145,7 @@ html, body { height: 100%; margin: 0; padding: 0; }
 #city_details {
   height:100%;
   padding-left: 400px;
-  padding-top: $gutter-width;
+  padding-top: 33px;
   font-family: 'Cantarell';
 
     // margin-right: 390px;
@@ -182,8 +184,10 @@ a {
   width:940px;
   float:right;
   background-color: #404040;
-  padding-bottom: 65px;
-  padding-top: 15px;
+  padding-bottom: 36px;
+  padding-top: 17px;
+  margin-bottom: 0px;
+  height: 100%;
 
 
 
@@ -227,6 +231,7 @@ a {
   padding-top:40px;
   width:150px;
   margin:auto;
+  color: white;
 }
 
 .loadinggif 
@@ -236,6 +241,12 @@ a {
      no-repeat
      right center;
 }
+
+#webdev_country_info {
+    &:hover {text-decoration:none;
+    color: #ffdd00;}
+    text-decoration:none;
+  }
 
 #links {
 width: 150px;
@@ -263,23 +274,44 @@ a.dev_city {
   text-decoration:none;
 }
 
-  p {
-      margin: 0 0 10px;
-      font-weight: 200 !important;
-      font-family: 'Tahoma';
-      font-size: 1em;
-      color: #ccc;
-  }
+  // p {
+  //     margin: 0 0 10px;
+  //     font-weight: 200;
+  //     font-family: 'Tahoma';
+  //     font-size: 1em;
+  //     color: #ccc;
+  // }
 
 
 #map {
   padding-left: 400px;
   margin-top:0px;
-  width:500px;
-  height:380px;
+  width:810px;
+  height:370px;
 }
 
 #columnRight {
   float:right;
   width:1250px;
+}
+.view_map{
+  padding-bottom: 17px;
+}
+
+#position {
+  font-size: 18px;
+  font-family: monospace !important;
+  padding-bottom: 16px;
+  color: white;
+}
+
+.general_info {
+  color: #ccc;
+  padding-right: 26px;
+}
+.income {
+  color: #ccc;
+}
+.exchange {
+  color: #ccc;
 }
