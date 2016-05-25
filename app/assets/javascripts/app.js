@@ -181,7 +181,9 @@ $(function() {
                             $("#api-response").append("<div class='exchange'><p>Exchange rate: " + String(data.quotes["USD"+selected_city.code]) + " " + selected_city.code + "</div>");
                         } 
                     }); 
-                $("#city_details").delay(600).append("<div class='link'><a class='link1' href='" + selected_city.link + "'>Find Jobs</a></div>");
+
+                $("#city_details").delay(600).append("<div class='link'><a target='_blank' class='link1' href='" + selected_city.link + "'>Find Jobs</a></div>");
+
                 $("#city_details").delay(600).append("<div class='view_map'><a class='middle_column1' id='webdev_country_info'>View Map</a></div><div></div>");
                 // $("#city_details").delay(600).append("<a class='middle_column1' id='webdev_currency_info'>Currency Info</a><br></br>");
             })
@@ -208,7 +210,8 @@ $(function() {
                     $("#api-response").append("<div class='exchange'><p>Exchange rate: " + String(data.quotes["USD"+selected_city.code]) + " " + selected_city.code + "</div>");
                 } 
             });  
-            $("#city_details").delay(600).append("<div class='link'><a class='link1' href='" + selected_city.link + "'>Find Jobs</a></div>");
+
+            $("#city_details").delay(600).append("<div class='link'><a target='_blank' class='link1' href='" + selected_city.link + "'>Find Jobs</a></div>");
             $("#city_details").append("<div class='view_map'><a class='middle_column1' id='webdev_country_info'>View Map</a></div><div></div>").show('slide', {direction: 'right'}, 600);
 
             // $("#city_details").append("<a class='middle_column1' id='webdev_currency_info'>Currency Info</a><br></br>").show('slide', {direction: 'right'}, 600);
