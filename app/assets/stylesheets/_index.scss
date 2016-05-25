@@ -2,23 +2,24 @@
  .title {
    color: yellow;
    margin-left: 53px;
-   margin-top: 130px;
+   margin-top: 225px;
    font-family: 'Play';
    font-size: 35px !important;
  }
+ 
  .quote h1 {
-   background-color: #ffdd00;
-   width: 850px;
-   height: 295px;
-   font-size: 70px;
-   margin-top: 75px;
-   // border-radius: 5px;
-   text-align: left;
-   font-family: 'Arial';
-   color: #333;
-   padding: 0.5em;
-  
+     background-color: #ffdd00;
+     width: 772px;
+     height: 257px;
+     font-size: 70px;
+     margin-top: 8px;
+     text-align: left;
+     font-family: 'Arial';
+     color: #333;
+     padding: 0.5em;
+     padding-top: 13px;
  }
+  
  .description {
    padding-right: 50px;
    margin-left: 13px;
@@ -34,8 +35,8 @@
    text-align: center;
    font-weight: bold;
    position: absolute;
-   top: 500px;
-   right: 440px;
+   top: 495px;
+   right: 514px;
    background: #ffdd00 !important;
    margin-right: 13px;
    width: 95px;
@@ -60,3 +61,4 @@
   background-image: url(new2.jpg);
   margin: auto;
  }
+

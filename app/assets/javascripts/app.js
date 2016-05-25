@@ -80,7 +80,7 @@ $(function() {
         if (searchTerm === "Web Developer") {
             
             $(".clear").html("");
-            $(".clear").append('<br></br>').velocity({duration:'slow'});
+            $(".clear").append('<br></br>');
 
             var sorted = data.sort(function(a,b){
                 var a1=a.webdev_rating, b1=b.webdev_rating;
@@ -90,11 +90,12 @@ $(function() {
             var top_five = sorted.slice(0,5);
             top_five.forEach(function(city) {
 
-              $(".clear").append("<a class='dev_city' data-city-id='" + city.id + "'>" + city.name + "</a><p></p><<p></p>").velocity({duration:'slow'});
+              $(".clear").append("<a class='dev_city' data-city-id='" + city.id + "'>" + city.name + "</a><p></p><br></br>").velocity({duration:'slow'});
 
             });
         
         } else if(searchTerm === "Accounting") {
+            
             $("#results").append("<p>Top 5 Cities</p>")
             var sorted = data.sort(function(a,b){
                 var a1=a.accountant_rating, b1=b.accountant_rating;
@@ -120,6 +121,7 @@ $(function() {
         
         } else if(searchTerm === "Journalist") {
             $(".clear").html("");
+            $(".clear").append('<br></br>');
             // $(".clear").append("<p>Top 5 Cities</p>")
 
             var sorted = data.sort(function(a,b){
@@ -132,7 +134,7 @@ $(function() {
 
             top_six.forEach(function(city) {
 
-            $(".clear").append("<a class='dev_city' data-city-id='" + city.id + "'>" + city.name + "</a><p></p>").velocity({duration:'slow'});
+            $(".clear").append("<a class='dev_city' data-city-id='" + city.id + "'>" + city.name + "</a><p></p><br></br>").velocity({duration:'slow'});
             });
         
         } else {
@@ -144,7 +146,8 @@ $(function() {
   });
 
     $('.jumbotron').on('click', '.dev_city', function(e) {
-        $('#map-currency').hide();
+
+        $("#map-currency").hide();
         $jumbotron.addClass('horizTranslate');
         $("#map-currency").html("");
         e.preventDefault();
@@ -161,10 +164,10 @@ $(function() {
         if (searchTerm === "Web Developer") {
 
             setTimeout(function(){
-                $("#city_details").delay(600).append("<div class='middle_column'><p>" + '<p style="font-size:25px; border-bottom: 1px solid #ffdd00;">' + selected_city.name + ", " + selected_city.country +'</p>' + "</p></div>");
+                $("#city_details").delay(600).append("<div class='middle_column'><p>" + '<p style="font-size:25px; border-bottom: 1px solid #ffdd00; color: #ccc;">' + selected_city.name + ", " + selected_city.country +'</p>' + "</p></div>");
                 $("#city_details").delay(600).append("<div class='middle_column1' id='webdev_rating_info'><p> Web Developer Rating: " + selected_city.webdev_rating + "/10"+ "</p>");
-                $("#city_details").delay(600).append("<div><p>" + selected_city.name + " Average Income for Web Developer with 0 years experience holding a Non-Degree Certificate Program is " + selected_city.webdev_avg_salary + "</p></div>");
-                $("#city_details").delay(600).append("<div><p>" + selected_city.general_info1 + "</p></div>");
+                $("#city_details").delay(600).append("<div class='income'><p>" + selected_city.name + " Average Income for Web Developer with 0 years experience holding a Non-Degree Certificate Program is " + selected_city.webdev_avg_salary + "</p></div>");
+                $("#city_details").delay(600).append("<div class='general_info'><p>" + selected_city.general_info1 + "</p></div>");
                 $("#city_details").append("<div id='api-response'></div>").delay(600).show(0);
             
                     // currency API
@@ -175,11 +178,11 @@ $(function() {
                         url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + access_key + '&currencies=' + selected_city.code,   
                         dataType: 'jsonp',
                         success:    function(data){
-                            $("#api-response").append("<div><p>Exchange rate: " + String(data.quotes["USD"+selected_city.code]) + " " + selected_city.code + "</div>");
+                            $("#api-response").append("<div class='exchange'><p>Exchange rate: " + String(data.quotes["USD"+selected_city.code]) + " " + selected_city.code + "</div>");
                         } 
                     }); 
 
-                $("#city_details").delay(600).append("<div><a class='middle_column1' id='webdev_country_info'>Country Info</a></div><div></div>");
+                $("#city_details").delay(600).append("<div class='view_map'><a class='middle_column1' id='webdev_country_info'>View Map</a></div><div></div>");
                 // $("#city_details").delay(600).append("<a class='middle_column1' id='webdev_currency_info'>Currency Info</a><br></br>");
             })
         }
@@ -188,10 +191,10 @@ $(function() {
 
             setTimeout(function(){
 
-            $("#city_details").append("<div class='middle_column'><p>" + '<p style="font-size:25px; border-bottom: 1px solid #ffdd00;">' + selected_city.name + ", " + selected_city.country +'</p>' + "</p></div>").show('slide', {direction: 'right'}, 600);
+            $("#city_details").append("<div class='middle_column'><p>" + '<p style="font-size:25px; border-bottom: 1px solid #ffdd00; font-family: inherit; color: #ccc;">' + selected_city.name + ", " + selected_city.country +'</p>' + "</p></div>").show('slide', {direction: 'right'}, 600);
             $("#city_details").append("<div class='middle_column1' id='webdev_rating_info'><p> Journalist Rating: " + selected_city.journalist_rating + "/10"+ "</p>").delay(600).show(0);
-            $("#city_details").append("<div><p>" + selected_city.name + " Average Income for Journalist with 0 years experience is " + selected_city.journalist_avg_salary + "</p></div>");
-            $("#city_details").append("<div><p>" + selected_city.general_info1 + "</p></div>").delay(600).show(0);
+            $("#city_details").append("<div class='general_info'><p>" + selected_city.name + " Average Income for Journalist with 0 years experience is " + selected_city.journalist_avg_salary + "</p></div>");
+            $("#city_details").append("<div class='general_info'><p>" + selected_city.general_info1 + "</p></div>").delay(600).show(0);
             $("#city_details").append("<div id='api-response'></div>").delay(600).show(0);
 
             // currency API
@@ -202,11 +205,11 @@ $(function() {
                 url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + access_key + '&currencies=' + selected_city.code,   
                 dataType: 'jsonp',
                 success:    function(data){
-                    $("#api-response").append("<div><p>Exchange rate: " + String(data.quotes["USD"+selected_city.code]) + " " + selected_city.code + "</div>");
+                    $("#api-response").append("<div class='exchange'><p>Exchange rate: " + String(data.quotes["USD"+selected_city.code]) + " " + selected_city.code + "</div>");
                 } 
             });  
 
-            $("#city_details").append("<div><a class='middle_column1' id='webdev_country_info'>Country Info</a></div><div></div>").show('slide', {direction: 'right'}, 600);
+            $("#city_details").append("<div class='view_map'><a class='middle_column1' id='webdev_country_info'>View Map</a></div><div></div>").show('slide', {direction: 'right'}, 600);
 
             // $("#city_details").append("<a class='middle_column1' id='webdev_currency_info'>Currency Info</a><br></br>").show('slide', {direction: 'right'}, 600);
             })
@@ -243,7 +246,7 @@ $(function() {
         e.preventDefault();
         var new_new_results = $("#map-currency");
         new_new_results.html("");
-        $("#map-currency").append("<div><p>" + "Position: " + selected_city.gps_coordinates + "</p></div>").delay(600).show(0);
+        $("#map-currency").append("<div id='position'><p>" + "Position: " + selected_city.gps_coordinates + "</p></div>").delay(600).show(0);
         $("#map-currency").append("<div id='map'></div>").show(0);
 
         map = new google.maps.Map(document.getElementById('map'), {
