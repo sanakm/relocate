@@ -45,7 +45,7 @@ $gutter-width: 45px;
   position: absolute;
   transition: width 0.5s ease-in-out;
   width: 30%;
-  margin-bottom:0px;
+  margin-bottom: 0px;
 }
 
 #title_bar {
@@ -165,19 +165,21 @@ a {
 
 #map-currency {
   // -webkit-border-radius: 10px 10px;
-  // // width: 30%;
+
   // // height: 300px;
   // margin-right: 0px;
   display: block;
   // padding-left: 400px;
   // width: 35%;
-  margin-top: 30px;
+  // margin-top: 10px;
   // border:1px solid white;
   // margin-left: 30px;
   overflow: auto;
-  width:900px;
+  width:940px;
   float:right;
-  background-color:yellow;
+  background-color: #404040;
+  padding-bottom: 65px;
+  padding-top: 15px;
 
 
 
@@ -270,5 +272,5 @@ p {
 
 #columnRight {
   float:right;
-  width:1200px;
+  width:1250px;
 }
